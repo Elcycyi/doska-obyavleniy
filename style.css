@@ -1,0 +1,73 @@
+/* Доска объявлений — своя правка поверх Bootstrap */
+
+body {
+  background: #f5f6f8;
+}
+
+.navbar-brand {
+  letter-spacing: -0.01em;
+}
+
+/* ---------- карточка объявления ---------- */
+
+.ad-card {
+  border: 1px solid #e3e6eb;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow .15s ease, transform .15s ease;
+  cursor: pointer;
+}
+
+.ad-card:hover {
+  box-shadow: 0 6px 20px rgba(19, 28, 46, .10);
+  transform: translateY(-2px);
+}
+
+/* Фиксированная рамка под фото: карточки в ряду не разъезжаются,
+   даже если картинки разного размера */
+.ad-thumb {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: #eceef2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ad-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* картинка заполняет рамку без искажения пропорций */
+  display: block;
+}
+
+.ad-thumb-empty {
+  color: #9aa1ad;
+  font-size: .85rem;
+}
+
+/* Длинное описание обрезаем тремя строками */
+.ad-card .card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ---------- мелочи ---------- */
+
+.nav-pills .nav-link {
+  font-weight: 600;
+}
+
+#previewThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+footer code {
+  color: #6c757d;
+}
